@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/mattiasrunge/can-homeauto/issues"
   },
-  "engines" {
+  "engines": {
       "node": ">= 7.0.0"
   }
 }
