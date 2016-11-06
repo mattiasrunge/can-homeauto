@@ -16,5 +16,5 @@ npm install
 
 ## Run
 ```bash
-node --harmony_async_await index.js
+node --harmony_async_await index.js [ host/ip [ port [ protocol xml ]]]
 ```
