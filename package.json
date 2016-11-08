@@ -13,12 +13,13 @@
   "author": "Mattias Runge <mattias@runge.se>",
   "license": "MIT",
   "dependencies": {
+    "mqtt": "^2.0.1",
     "xml2js": "^0.4.17"
   },
   "bugs": {
     "url": "https://github.com/mattiasrunge/can-homeauto/issues"
   },
   "engines": {
-      "node": ">= 7.0.0"
+    "node": ">= 7.0.0"
   }
 }
