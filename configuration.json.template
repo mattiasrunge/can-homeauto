@@ -1,0 +1,15 @@
+{
+  "can_network": {
+    "ip": "192.168.1.250",
+	"port": "1100",
+	"protocol": "../../Configuration/data.xml",
+	"alias": "../Atom1.5/storage/alias"
+  },
+  "mqtt": {
+    "url": "mqtt://123.123.123.123",
+	"port": "1883",
+	"user": "",
+	"password": "",
+	"clientid": "mqttjs"
+  }
+}
