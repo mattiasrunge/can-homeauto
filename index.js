@@ -27,7 +27,6 @@ conn.on("message", (message) => {
 
 conn.on("mqttmessage", (message)  => {
     console.log("Message", JSON.stringify(message));
-    //mqttclient.publish(message.topic, message.value.toString());
 });
 
 conn.start()

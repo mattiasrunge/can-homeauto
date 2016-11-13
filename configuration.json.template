@@ -8,8 +8,8 @@
   "mqtt": {
     "url": "mqtt://123.123.123.123",
 	"port": "1883",
-	"user": "",
+	"username": "",
 	"password": "",
-	"clientid": "mqttjs"
+	"clientId": "mqttjs"
   }
 }
