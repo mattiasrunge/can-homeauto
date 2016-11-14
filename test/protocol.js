@@ -7,6 +7,7 @@ const { assert } = require("chai");
 const Protocol = require("../lib/protocol");
 const Encoder = require("../lib/encoder");
 const Decoder = require("../lib/decoder");
+const Bitset = require("../lib/bitset");
 
 const protocol = new Protocol(path.join(__dirname, "..", "protocol.xml"));
 const encoder = new Encoder(protocol);
@@ -249,5 +250,39 @@ describe("Protocol", () => {
                 values: []
             }
         ]);
+    });
+
+    const encodeDecode = (type, startBit, bitLength, value) => {
+        const bitset = new Bitset(((startBit + bitLength) * 8) + 1);
+        protocol[`encode${type}`](bitset, startBit, bitLength, value);
+        const decodedValue = protocol[`decode${type}`](bitset, startBit, bitLength);
+
+        if (type === "Float") {
+            assert.closeTo(decodedValue, value, 0.1);
+        } else {
+            assert.equal(decodedValue, value);
+        }
+    };
+
+    it("shall encode and decode an int", () => {
+        for (let n = -128; n < 128; n++) {
+            encodeDecode("Int", 0, 32, n);
+        }
+    });
+
+    it("shall encode and decode an uint", () => {
+        for (let n = 0; n < 256; n++) {
+            encodeDecode("Uint", 0, 32, n);
+        }
+    });
+
+    it("shall encode and decode an float", () => {
+        for (let n = -128; n < 128; n += 0.1) {
+            encodeDecode("Float", 0, 32, n);
+        }
+    });
+
+    it("shall encode and decode an ascii string", () => {
+        encodeDecode("Ascii", 0, 64, "Test123");
     });
 });
