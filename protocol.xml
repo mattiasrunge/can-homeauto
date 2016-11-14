@@ -17,14 +17,14 @@
 	<variable name="SequenceNumber" type="uint" start_bit="40" bit_length="8" unit="" description=""/>
       </variables>
     </command>
-    
+
     <command id="2" name="Debug" type="global" module="" description="Used for debugging, should not be used for anything real"/>
     <command id="3" name="Report_Interval" type="global" module="" description="Get/Set interval of reporting">
       <variables>
 	<variable name="Time" type="uint" start_bit="0" bit_length="8" unit="Second" description=""/>
       </variables>
     </command>
-    
+
     <command id="10" name="GPSTime" type="global" module="" description="Timestamp from GPS module">
       <variables>
 	<variable name="Hour" type="uint" start_bit="0" bit_length="8" unit="" description=""/>
@@ -33,7 +33,7 @@
 	<variable name="Zone" type="uint" start_bit="24" bit_length="8" unit="" description="Timezone diff from GMT"/>
       </variables>
     </command>
-    
+
     <command id="11" name="GPSDate" type="global" module="" description="Date from GPS module">
       <variables>
 	<variable name="Year" type="uint" start_bit="0" bit_length="8" unit="" description=""/>
@@ -41,8 +41,8 @@
 	<variable name="Day" type="uint" start_bit="16" bit_length="8" unit="" description=""/>
       </variables>
     </command>
-    
-    
+
+
     <command id="64" name="Pwm" type="physical" module="" description="Message for pwm data">
       <variables>
 	<variable name="Channel" type="uint" start_bit="0" bit_length="8" unit="" description=""/>
@@ -181,8 +181,8 @@
 	<variable name="Value" type="uint" start_bit="8" bit_length="16" unit="%" description=""/>
       </variables>
     </command>
-    
-    
+
+
     <command id="128" name="setEnergy" type="specific" module="power" description="Set the energy value on the power meter module">
       <variables>
 	<variable name="Energy" type="uint" start_bit="0" bit_length="32" unit="W/h" description=""/>
@@ -192,8 +192,8 @@
       <variables>
 	<variable name="Energy" type="uint" start_bit="0" bit_length="16" unit="W/(10*h)" description=""/>
       </variables>
-    </command>    
-    
+    </command>
+
     <command id="128" name="IRraw" type="specific" module="irReceive" description="If a protocol not could be found, then send raw data">
       <variables>
 	<variable name="Act1" type="uint" start_bit="0" bit_length="16" unit="Microsecond" description="First active time"/>
@@ -202,7 +202,7 @@
 	<variable name="Pas2" type="uint" start_bit="48" bit_length="16" unit="Microsecond" description="Second passive time"/>
       </variables>
     </command>
-    
+
     <command id="128" name="IRraw" type="specific" module="irTransceive" description="If a protocol not could be found, then send raw data">
       <variables>
 	<variable name="Act1" type="uint" start_bit="0" bit_length="16" unit="Microsecond" description="First active time"/>
@@ -269,31 +269,31 @@
 	<variable name="Mode2" type="uint" start_bit="8" bit_length="8" unit="" description=""/>
 	<variable name="Response" type="enum" start_bit="16" bit_length="8" unit="" description="">
 	  <value id="0" name="Ok"/>
-	  
+
 	  <!-- Pronto transmission was stopped (either prematurely or due to completion). -->
 	  <value id="1" name="Stopped"/>
-	  
+
 	  <!-- Waiting for next pronto data packet. -->
 	  <value id="2" name="Waiting"/>
-	  
+
 	  <!-- Pronto data is now being transmitted. -->
 	  <value id="4" name="Transmitting"/>
-	  
+
 	  <!-- Trying to stop or continue a pronto transmission that has already stopped. -->
 	  <value id="241" name="AlreadyStopped"/>
-	  
+
 	  <!-- Pronto data is already being transmitted (or prepared) on another channel. Can only process pronto data at one channel at once. -->
 	  <value id="242" name="Busy_AlreadySendingPronto"/>
-	  
+
 	  <!-- The specified channel is busy transmitting (pronto or non-pronto) data. -->
 	  <value id="243" name="Busy_ChannelBusy"/>
-	  
+
 	  <!-- Transmission (pronto or non-pronto) with other frequency is ongoing on other channel. -->
 	  <value id="244" name="Busy_OtherFrequencyLocked"/>
-	  
+
 	  <!-- Pronto activity is ongoing, but on a different channel than that specified in STOP/CONTINUE request. -->
 	  <value id="245" name="Error_WrongProntoChannel"/>
-	  
+
 	  <!-- Generic error code. Bad data in packet. -->
 	  <value id="255" name="Error"/>
 	</variable>
@@ -667,7 +667,7 @@
 	<variable name="Repeat" type="uint" start_bit="48" bit_length="8" unit="Count" description="Repeat info"/>
       </variables>
     </command>
-    
+
     <command id="128" name="Position" type="specific" module="nmea" description="WGS80 LAT/LONG Position">
       <variables>
 	<variable name="Lat_deg" type="uint" start_bit="0" bit_length="8" unit="Degrees" description="Degrees Lat"/>
@@ -677,7 +677,7 @@
 	<variable name="Lon_deg" type="uint" start_bit="32" bit_length="8" unit="Degrees" description="Degrees Lat"/>
 	<variable name="Lon_min" type="uint" start_bit="40" bit_length="8" unit="'" description="Minutes lat"/>
 	<variable name="Lon_sec" type="uint" start_bit="48" bit_length="15" unit="''" description="Seconds Lat"/>
-	<variable name="Lon_CD" type="uint" start_bit="63" bit_length="1" unit="" description="E/W"/>		
+	<variable name="Lon_CD" type="uint" start_bit="63" bit_length="1" unit="" description="E/W"/>
       </variables>
     </command>
     <command id="129" name="Heading" type="specific" module="nmea" description="Speed, heading, fix information">
@@ -689,7 +689,7 @@
 	<variable name="Course" type="uint" start_bit="32" bit_length="16" unit="Degrees" description="Course made good"/>
       </variables>
     </command>
-    
+
     <command id="128" name="Printf" type="specific" module="Debug" description="Used for sending debug text with printf">
       <variables>
 	<variable name="Text" type="ascii" start_bit="0" bit_length="64" unit="" description=""/>
@@ -707,7 +707,7 @@
 	<variable name="Byte7" type="uint" start_bit="56" bit_length="8" unit="" description=""/>
       </variables>
     </command>
-    
+
     <command id="128" name="LCD_Clear" type="specific" module="HD44789" description="Clear LCD"/>
     <command id="129" name="LCD_Cursor" type="specific" module="HD44789" description="Set LCD cursor position">
       <variables>
@@ -742,7 +742,7 @@
 	<variable name="Text" type="ascii" start_bit="16" bit_length="48" unit="" description=""/>
       </variables>
     </command>
-    
+
     <command id="128" name="DEBUG" type="specific" module="RGBdriver" description="Debug data from RGB-driver">
       <variables>
 	<variable name="ADC_W" type="uint" start_bit="0" bit_length="8" unit="" description=""/>
@@ -755,7 +755,7 @@
 	<variable name="PWM_B" type="uint" start_bit="56" bit_length="8" unit="" description=""/>
       </variables>
     </command>
-    
+
     <command id="128" name="SerialData" type="specific" module="Serial" description="Serial data">
       <variables>
 	<variable name="Text" type="ascii" start_bit="0" bit_length="64" unit="" description=""/>
@@ -794,7 +794,7 @@
 	<variable name="SuffixByte0" type="uint" start_bit="54" bit_length="8" unit="" description="Suffix byte0"/>
       </variables>
     </command>
-    
+
     <command id="128" name="AnalogConfig" type="specific" module="inputAnalog" description="Configuration for analog input module">
       <variables>
 	<variable name="SensorId" type="uint" start_bit="0" bit_length="4" unit="" description="Which input to configure"/>
@@ -815,7 +815,7 @@
 	<variable name="Periodicity" type="uint" start_bit="40" bit_length="16" unit="Millisecond" description="The periodicity at which the sensorvalue is sent during periodic measure"/>
       </variables>
     </command>
-    
+
     <command id="128" name="DEBUG" type="specific" module="PID" description="Debug data from PID regulator">
       <variables>
 	<variable name="P_term" type="uint" start_bit="0" bit_length="16" unit="" description=""/>
@@ -858,7 +858,7 @@
 	<variable name="Sum" type="int" start_bit="48" bit_length="16" unit="" description=""/>
       </variables>
     </command>
-    
+
     <command id="133" name="P_I_term" type="specific" module="PID" description="Debug data from PID regulator">
       <variables>
 	<variable name="P_term" type="IEEE32" start_bit="0" bit_length="32" unit="" description=""/>
@@ -935,7 +935,7 @@
 	<variable name="Offset" type="IEEE32" start_bit="32" bit_length="32" unit="" description="Startvalue is Factor*reference value + offset"/>
       </variables>
     </command>
-    
+
     <command id="128" name="CONFIG" type="specific" module="SlowPWM" description="Configure PWM output, if message is sent with 0 data bytes, module will respond with current configuration">
       <variables>
 	<variable name="pwmPeriod" type="uint" start_bit="0" bit_length="16" unit="" description=""/>
@@ -951,7 +951,7 @@
 	</variable>
       </variables>
     </command>
-    
+
     <command id="128" name="LCD_Clear" type="specific" module="KS0108" description="Clear LCD">
       <variables>
 	<variable name="Inverted" type="enum" start_bit="0" bit_length="1" unit="" description="Set to 1 of you want an inverted screen">
@@ -1005,7 +1005,7 @@
 	<variable name="Transparent" type="enum" start_bit="1" bit_length="1" unit="" description="Set to 1 of you want to keep screen background">
 	  <value id="0" name="Standard"/>
 	  <value id="1" name="Transparent"/>
-	</variable>  
+	</variable>
 	<variable name="X" type="uint" start_bit="2" bit_length="6" unit="" description=""/>
 	<variable name="Y" type="uint" start_bit="8" bit_length="8" unit="" description=""/>
 	<variable name="Text" type="ascii" start_bit="16" bit_length="48" unit="" description=""/>
@@ -1020,7 +1020,7 @@
 	<variable name="Fill" type="enum" start_bit="1" bit_length="1" unit="" description="Set to 1 of you want the rectangle filled">
 	  <value id="0" name="NoFill"/>
 	  <value id="1" name="Fill"/>
-	</variable>  
+	</variable>
 	<variable name="X" type="uint" start_bit="8" bit_length="8" unit="" description=""/>
 	<variable name="Y" type="uint" start_bit="16" bit_length="8" unit="" description=""/>
 	<variable name="Width" type="uint" start_bit="24" bit_length="8" unit="" description=""/>
@@ -1039,7 +1039,7 @@
 	<variable name="X2" type="uint" start_bit="24" bit_length="8" unit="" description=""/>
 	<variable name="Y2" type="uint" start_bit="32" bit_length="8" unit="" description=""/>
       </variables>
-    </command>   
+    </command>
     <command id="136" name="LCD_DrawCircle" type="specific" module="KS0108" description="Draw a circle on LCD">
       <variables>
 	<variable name="Inverted" type="enum" start_bit="0" bit_length="1" unit="" description="Set to 1 of you want an inverted screen">
@@ -1050,7 +1050,7 @@
 	<variable name="Ycentre" type="uint" start_bit="16" bit_length="8" unit="" description=""/>
 	<variable name="Radius" type="uint" start_bit="24" bit_length="8" unit="" description=""/>
       </variables>
-    </command>     
+    </command>
     <command id="137" name="LCD_InvertRect" type="specific" module="KS0108" description="Invert pixels in an rectangle on the LCD">
       <variables>
 	<variable name="X" type="uint" start_bit="0" bit_length="8" unit="" description=""/>
@@ -1058,7 +1058,7 @@
 	<variable name="Width" type="uint" start_bit="16" bit_length="8" unit="" description=""/>
 	<variable name="Height" type="uint" start_bit="24" bit_length="8" unit="" description=""/>
       </variables>
-    </command>    
+    </command>
     <command id="138" name="LCD_New_Image" type="specific" module="KS0108" description="Store a new image in eeprom">
       <variables>
 	<variable name="image_id" type="uint" start_bit="0" bit_length="8" unit="" description="the new image id"/>
@@ -1071,7 +1071,7 @@
 	<variable name="packet_id" type="uint" start_bit="0" bit_length="8" unit="" description="Id of the packet that is acknoleged"/>
       </variables>
     </command>
-    <command id="140" name="LCD_Error" type="specific" module="KS0108" description="Data error"/>   
+    <command id="140" name="LCD_Error" type="specific" module="KS0108" description="Data error"/>
     <command id="141" name="LCD_Image_Data" type="specific" module="KS0108" description="Data"/>
     <command id="141" name="LCD_Image_Data_7" type="specific" module="KS0108" description="Data">
       <variables>
@@ -1145,7 +1145,7 @@
       <variables>
       </variables>
     </command>
-    
+
     <command id="128" name="Motion" type="specific" module="PIR" description="Motion and brightness from PIR-sensor">
       <variables>
 	<variable name="Id" type="uint" start_bit="0" bit_length="8" unit="" description=""/>
@@ -1155,15 +1155,15 @@
 	  <value id="1" name="MotionDetected"/>
 	</variable>
       </variables>
-    </command>  
-    
+    </command>
+
     <command id="128" name="Demo" type="specific" module="Dimmer230" description="Fade to x+steps, then to x-steps and then back to x. If x is close to, or at, top or bottom then fade more to the other direction">
       <variables>
 	<variable name="Channel" type="uint" start_bit="0" bit_length="8" unit="" description="Dimmer channel"/>
 	<variable name="Speed" type="uint" start_bit="8" bit_length="8" unit="" description="Speed is 1/127 steps per 10ms up to 127 steps per 10ms"/>
 	<variable name="Steps" type="uint" start_bit="16" bit_length="8" unit="" description=""/>
       </variables>
-    </command>   
+    </command>
     <command id="129" name="Start_Fade" type="specific" module="Dimmer230" description="Fade in a direction and don't stop until another command is received or top/bottom is reached">
       <variables>
 	<variable name="Channel" type="uint" start_bit="0" bit_length="8" unit="" description="Dimmer channel"/>
@@ -1212,7 +1212,7 @@
 	<variable name="Channel" type="uint" start_bit="16" bit_length="8" unit="" description="Dimmer channel"/>
       </variables>
     </command>
-    
+
     <command id="128" name="Demo" type="specific" module="hwPWM" description="Fade to x+steps, then to x-steps and then back to x. If x is close to, or at, top or bottom then fade more to the other direction">
       <variables>
 	<variable name="Channel" type="uint" start_bit="0" bit_length="8" unit="" description="Dimmer channel"/>
@@ -1253,7 +1253,7 @@
 	<variable name="Steps" type="uint" start_bit="24" bit_length="16" unit="" description="Number of percent to step in %/100"/>
       </variables>
     </command>
-    
+
     <command id="128" name="Demo" type="specific" module="PCAPWM" description="Fade to x+steps, then to x-steps and then back to x. If x is close to, or at, top or bottom then fade more to the other direction">
       <variables>
 	<variable name="Channel" type="uint" start_bit="0" bit_length="8" unit="" description="Dimmer channel"/>
@@ -1294,7 +1294,7 @@
 	<variable name="Steps" type="uint" start_bit="24" bit_length="16" unit="" description="Number of percent to step in %/100"/>
       </variables>
     </command>
-    
+
     <command id="128" name="Demo" type="specific" module="RGBW" description="Fade to x+steps, then to x-steps and then back to x. If x is close to, or at, top or bottom then fade more to the other direction">
       <variables>
 	<variable name="Channel" type="uint" start_bit="0" bit_length="8" unit="" description="Dimmer channel"/>
@@ -1335,20 +1335,20 @@
 	<variable name="Steps" type="uint" start_bit="24" bit_length="16" unit="" description="Number of percent to step in %/100"/>
       </variables>
     </command>
-    
+
     <command id="128" name="Id" type="specific" module="identification" description="Broadcast this nodes ID">
       <variables>
 	<variable name="HardwareId" type="uint" start_bit="0" bit_length="32" unit="" description=""/>
       </variables>
     </command>
-    
+
     <command id="128" name="CONFIG" type="specific" module="softPWM" description="Configure the PWM">
       <variables>
 	<variable name="Period" type="uint" start_bit="0" bit_length="16" unit="ms" description=""/>
 	<variable name="Resolution" type="uint" start_bit="16" bit_length="8" unit="ms" description=""/>
       </variables>
     </command>
-    
+
     <command id="128" name="Gesture" type="specific" module="Touch" description="Parsed touch data as a gesture">
       <variables>
 	<variable name="f1" type="uint" start_bit="0" bit_length="8" unit="#" description="Indicates the number of intersection points between an input gesture g(x) and the straight line f(x) which connects the first and last point of the gesture"/>
@@ -1394,7 +1394,7 @@
 	<variable name="Y" type="uint" start_bit="16" bit_length="8" unit="" description=""/>
       </variables>
     </command>
-    
+
     <command id="128" name="Position" type="specific" module="linearAct" description="Set and get position">
       <variables>
 	<variable name="Position" type="uint" start_bit="0" bit_length="16" unit="" description=""/>
@@ -1408,7 +1408,7 @@
     <command id="129" name="Limits" type="specific" module="linearAct" description="Set and get limits">
       <variables>
 	<variable name="Min" type="uint" start_bit="0" bit_length="16" unit="" description=""/>
-	<variable name="Low" type="uint" start_bit="16" bit_length="16" unit="" description=""/>  
+	<variable name="Low" type="uint" start_bit="16" bit_length="16" unit="" description=""/>
 	<variable name="High" type="uint" start_bit="32" bit_length="16" unit="" description=""/>
 	<variable name="Max" type="uint" start_bit="48" bit_length="16" unit="" description=""/>
       </variables>
@@ -1418,14 +1418,14 @@
 	<variable name="OptionalPosition" type="uint" start_bit="0" bit_length="16" unit="" description="Option to set current value for position"/>
       </variables>
     </command>
-    
+
     <command id="128" name="setCounter" type="specific" module="counter" description="Set the counter value on the counter module">
       <variables>
 	<variable name="PinId" type="uint" start_bit="0" bit_length="8" unit="" description=""/>
 	<variable name="Count" type="uint" start_bit="8" bit_length="32" unit="" description=""/>
       </variables>
     </command>
-    
+
     <command id="128" name="ImageDataModule1" type="specific" module="DotMatrix" description="">
       <variables>
 	<variable name="Row1" type="uint" start_bit="0" bit_length="8" unit="" description=""/>
@@ -1474,13 +1474,13 @@
 	<variable name="Row8" type="uint" start_bit="56" bit_length="8" unit="" description=""/>
       </variables>
     </command>
-    
+
     <command id="128" name="setVolume" type="specific" module="water" description="Set the volume value on the water meter module">
       <variables>
 	<variable name="Volume" type="uint" start_bit="0" bit_length="32" unit="Liter" description=""/>
       </variables>
     </command>
-    
+
     <command id="128" name="UltrasonicConfig" type="specific" module="ultrasonic" description="Configure an ultrasonic module to output 0 to 100%">
       <variables>
 	<variable name="SensorId" type="uint" start_bit="0" bit_length="8" unit="" description=""/>
@@ -1492,10 +1492,10 @@
 	</variable>
       </variables>
     </command>
-    
+
   </commands>
-  
-  
+
+
   <modules>
     <module id="0" name="Debug" class="tst"/>
     <module id="1" name="Default" class="def"/>
@@ -1531,7 +1531,7 @@
     <module id="32" name="rfid" class="sns"/>
     <module id="33" name="water" class="sns"/>
     <module id="34" name="flower" class="sns"/>
-    
+
     <module id="45" name="PIR" class="sns"/>
     <module id="46" name="TCN75A" class="sns"/>
     <module id="47" name="VoltageCurrent" class="sns"/>
@@ -1540,8 +1540,8 @@
     <module id="50" name="inputAnalog" class="sns"/>
     <module id="51" name="LM335" class="sns"/>
     <module id="52" name="SH11" class="sns"/>
-    
-    
+
+
     <module id="55" name="NTC" class="sns"/>
     <module id="56" name="sigmadelta_dimmer" class="act"/>
     <module id="57" name="counter" class="sns"/>
@@ -1553,14 +1553,14 @@
     <module id="63" name="qtouch" class="sns"/>
     <module id="64" name="ultrasonic" class="sns"/>
   </modules>
-  
-  
+
+
   <defines>
     <define id="1" group="DirectionFlag" name="From_Owner"/>
     <define id="0" group="DirectionFlag" name="To_Owner"/>
   </defines>
-  
-  
+
+
   <nmt_messages>
     <nmt_message id="0" name="Time"/>
     <nmt_message id="4" name="Reset">
