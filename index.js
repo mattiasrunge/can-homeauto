@@ -1,6 +1,5 @@
 "use strict";
 
-const path = require("path");
 const Connection = require("./lib/connection");
 
 const configuration = require("./configuration.json");
@@ -25,7 +24,7 @@ conn.on("message", (message) => {
     console.log("message", JSON.stringify(message));
 });
 
-conn.on("mqttmessage", (message)  => {
+conn.on("mqttmessage", (message) => {
     console.log("Message", JSON.stringify(message));
 });
 
