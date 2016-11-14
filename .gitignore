@@ -2,3 +2,4 @@ yarn.lock
 node_modules
 configuration.json
 alias
+data.xml
