@@ -5,18 +5,12 @@
 const path = require("path");
 const { assert } = require("chai");
 const Protocol = require("../lib/protocol");
-const Encoder = require("../lib/encoder");
-const Decoder = require("../lib/decoder");
 const Bitset = require("../lib/bitset");
 
 const protocol = new Protocol(path.join(__dirname, "..", "protocol.xml"));
-const encoder = new Encoder(protocol);
-const decoder = new Decoder(protocol);
 
 describe("Protocol", () => {
-    it("shall load without error", () => {
-        return protocol.load();
-    });
+    it("shall load without error", () => protocol.load());
 
     it("shall lookup some class names", () => {
         assert.equal(protocol.lookupClassName(0), "nmt");
@@ -283,6 +277,14 @@ describe("Protocol", () => {
     });
 
     it("shall encode and decode an ascii string", () => {
-        encodeDecode("Ascii", 0, 64, "Test123");
+        encodeDecode("Ascii", 0, 7 * 8, "Test123");
+    });
+
+    it("shall encode and decode an hex string", () => {
+        encodeDecode("Hexstring", 0, 1 * 4, "0");
+        encodeDecode("Hexstring", 0, 1 * 4, "F");
+        encodeDecode("Hexstring", 0, 6 * 4, "0123EF");
+        encodeDecode("Hexstring", 0, 8 * 4, "FFFFFFFF");
+        encodeDecode("Hexstring", 0, 10 * 4, "0000000000");
     });
 });
