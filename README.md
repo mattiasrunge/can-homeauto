@@ -1,5 +1,5 @@
-# can-homeauto
-Protocol implementation for auml can homeautomation
+# can2mqtt-bridge
+Protocol implementation for auml can homeautomation and translates it to mqtt
 
 ## Install node 7
 ```bash
